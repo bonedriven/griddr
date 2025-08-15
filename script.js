@@ -43,7 +43,16 @@ $(document).ready(function() {
           }
       }
   }
-
+  const SETTINGS_KEY = 'griddr:settings';
+  function loadSettings() {
+    try { return JSON.parse(localStorage.getItem(SETTINGS_KEY)) || { left: 45, right: 80 }; }
+    catch { return { left: 45, right: 80 }; }
+  }
+  function saveSettings(s) {
+    localStorage.setItem(SETTINGS_KEY, JSON.stringify(s));
+  } 
+  let settings = loadSettings();
+  
   function saveList() {
       /* save the user's list */
       // Make text from the dictionary
