@@ -8,6 +8,29 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.7.0/d3.min.js" referrerpolicy="no-referrer"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script src="./script.js"></script>
+  <!-- Add near existing controls -->
+  <div id="extras" class="extras">
+  <button id="btn-skip" title="No change">Skip</button>
+  <button id="btn-export-overrides" title="Download only edited scores">Export overrides</button>
+  <button id="btn-settings" title="Score settings">⚙︎</button>
+  </div>
+
+ <!-- Lightweight settings dialog -->
+ <div id="settings" class="settings" style="display:none;">
+   <div class="settings-inner">
+     <label>Left swipe score
+       <input id="leftScore" type="number" min="-999" max="999" />
+     </label>
+     <label>Right swipe score
+       <input id="rightScore" type="number" min="-999" max="999" />
+     </label>
+     <div class="row">
+       <button id="btn-save-settings">Save</button>
+       <button id="btn-cancel-settings">Cancel</button>
+     </div>
+   </div>
+ </div>
+  
 </head>
 <body>
 <!-- These are the cards we load -->
